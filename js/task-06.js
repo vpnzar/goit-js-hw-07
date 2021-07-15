@@ -3,24 +3,20 @@ const form = {
   inputDataLength: document.querySelector('input'),
 };
 
-form.input.addEventListener('blur', checkLengthText);
-// form.input.addEventListener('change', checkInputText);
+form.input.addEventListener('change', checkLengthText);
 
 function checkLengthText(event) {
-  console.log(isNaN(event.currentTarget.value.length));
-  console.log(isNaN(form.inputDataLength.dataset.length));
+  // console.log(Number.isFinite(event.currentTarget.value.length));
+  // console.log(Number.isFinite(form.inputDataLength.dataset.length));
 
   if (
-    form.inputDataLength.dataset.length === event.currentTarget.value.length
+    Number(form.inputDataLength.dataset.length) ===
+    event.currentTarget.value.length
   ) {
-    console.log(false);
+    form.input.classList.add('valid');
+    form.input.classList.remove('invalid');
   } else {
-    console.log(true);
+    form.input.classList.add('invalid');
+    form.input.classList.remove('valid');
   }
 }
-
-// console.log(form.input);
-
-// function checkInputText(event) {
-//   console.log(event.currentTarget.value.length);
-// }
