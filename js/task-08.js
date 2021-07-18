@@ -5,27 +5,33 @@ const form = {
   destroyBtn: document.querySelector('[data-action="destroy"]'),
 };
 
-console.log(form.box);
-
 // form.input.addEventListener('click', amountInput);
 form.renderBtn.addEventListener('click', createBoxes);
+form.destroyBtn.addEventListener('click', destroyBoxes);
 
 function createBoxes(amount) {
   amount = form.input.value;
-  console.log(form.input.value);
   const amountBoxes = [];
-
-  console.log(amountBoxes);
+  const rdmColor = () => (Math.random() * 256) >> 0;
+  const sizeValue = 30;
 
   for (let i = 0; i < amount; i++) {
     const cloneBox = document.createElement('div');
-    const rgbColor =
-      '#' + (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6);
-    cloneBox.style = 'background: rgbColor';
-    cloneBox.classList.add('box');
+    cloneBox.style.backgroundColor = `rgb(${rdmColor()}, ${rdmColor()}, ${rdmColor()})`;
+    cloneBox.style.width = `${sizeValue}px`;
+    cloneBox.style.height = `${sizeValue}px`;
+    if (i > 0) {
+      console.log(i);
+      cloneBox.style.width = `${sizeValue + 10}px`;
+      cloneBox.style.height = `${sizeValue + 10}px`;
+    }
     amountBoxes.push(cloneBox);
   }
-  form.box.appendChild(...amountBoxes);
+  form.box.append(...amountBoxes);
 }
 
-console.log(form.box);
+function destroyBoxes() {
+  //   document.querySelector('.box').remove();
+  form.box.remove();
+  location.reload();
+}

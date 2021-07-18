@@ -25,9 +25,7 @@ input {
   padding-bottom: 40px;
 }
 
-.box {
+/* .box {
   width: 30px;
   height: 30px;
-  /* background-color: " + 
-    '#' + (Math.random().toString(16) + '000000').substring(2,8).toUpperCase(); */
-}
+} */
