@@ -19,7 +19,7 @@ function createBoxes(amount) {
     cloneBox.style.backgroundColor = `rgb(${rdmColor()}, ${rdmColor()}, ${rdmColor()})`;
     cloneBox.style.width = `${sizeValue}px`;
     cloneBox.style.height = `${sizeValue}px`;
-    sizeValue = sizeValue + 1;
+    sizeValue = sizeValue + 10;
     amountBoxes.push(cloneBox);
   }
   form.box.append(...amountBoxes);
