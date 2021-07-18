@@ -3,12 +3,9 @@ const form = {
   inputDataLength: document.querySelector('input'),
 };
 
-form.input.addEventListener('change', checkLengthText);
+form.input.addEventListener('blur', checkLengthText);
 
 function checkLengthText(event) {
-  // console.log(Number.isFinite(event.currentTarget.value.length));
-  // console.log(Number.isFinite(form.inputDataLength.dataset.length));
-
   if (
     Number(form.inputDataLength.dataset.length) ===
     event.currentTarget.value.length

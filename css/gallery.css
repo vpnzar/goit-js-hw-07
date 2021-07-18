@@ -1,0 +1,12 @@
+#gallery {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#gallery .item {
+  display: flex;
+  width: 100%;
+  object-fit: cover;
+}
