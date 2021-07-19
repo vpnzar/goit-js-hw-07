@@ -26,7 +26,5 @@ function createBoxes(amount) {
 }
 
 function destroyBoxes() {
-  //   document.querySelector('.box').remove();
-  form.box.remove();
-  location.reload();
+  form.box.innerHTML = '';
 }

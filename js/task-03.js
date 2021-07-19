@@ -16,9 +16,11 @@ const images = [
 const createImageItemsList = document.querySelector('#gallery');
 
 const addList = function (items) {
-  return items.map(item => {
-    return `<li><img class='item' src=${item.url} alt=${item.alt} height=250/></li>`;
-  });
+  return items
+    .map(item => {
+      return `<li><img class='item' src=${item.url} alt=${item.alt} height=250/></li>`;
+    })
+    .join('');
 };
 
 createImageItemsList.insertAdjacentHTML('afterbegin', addList(images));
